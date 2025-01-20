@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: welcome-world-flask
+  name: welcome-world-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: welcome-world-flask
+  template:
+    metadata:
+      labels:
+        app: welcome-world-flask
+    spec:
+      containers:
+      - image: docker-0.unsee.tech/vans8800/wellcome-flask
+        name: welcome-world-flask
